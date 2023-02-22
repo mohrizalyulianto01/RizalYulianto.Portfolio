@@ -194,7 +194,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+            <form name="jadikoding-form">
               <div class="mb-3">
                 <label for="name" class="form-label"
                   >Nama Lengkap</label
@@ -204,6 +204,7 @@
                   class="form-control"
                   id="name"
                   aria-describedby="name"
+                  name="nama"
                 />
               <div class="mb-3">
                 <label for="email" class="form-label"
@@ -214,11 +215,12 @@
                   class="form-control"
                   id="email"
                   aria-describedby="email"
+                  name="email"
                 />
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="pesan"></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary">Kirim</button>
@@ -241,5 +243,19 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <!-- input form spredsheet  -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwk3uCw2bzdeLuaiolYwOt7DF0U11Ocpf7x1Yj1uLJDiHDvs1zxWZ1mUwY37vNYEBP5/exec'
+      const form = document.forms['jadikoding-form']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+    <!-- input form spredsheet end -->
   </body>
 </html>
