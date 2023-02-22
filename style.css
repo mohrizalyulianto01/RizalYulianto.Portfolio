@@ -10,3 +10,33 @@
 section {
   padding-top: 6rem;
 }
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #87cefa;
+}
+
+#project {
+  background-color: #87cefa;
+}
+
+section {
+  padding-top: 6rem;
+}
+
+/* footer */
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: #87cefa;
+}
+.text-white {
+  text-decoration: none;
+}
